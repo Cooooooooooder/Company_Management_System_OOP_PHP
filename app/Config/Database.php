@@ -19,7 +19,7 @@ class Database
                 "localhost",
                 "root",
                 "",
-                "company_company_management_system"
+                "company_management_system"
             );
 
             if (self::$connection->connect_error) {
