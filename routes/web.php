@@ -50,6 +50,8 @@ $router->post('/employees/delete', [$employee, 'delete']);
 $router->get('/login', [$auth, 'login']);
 $router->post('/login', [$auth, 'authenticate']);
 $router->post('/logout', [$auth, 'logout']);
+
+
 $router->get('/dashboard', [$dashboard, 'index']);
 
 $router->get('/projects', [$project, 'index']);
@@ -69,13 +71,3 @@ $router->get('/tasks/edit', [$task, 'edit']);
 $router->post('/tasks/update', [$task, 'update']);
 $router->post('/tasks/delete', [$task, 'delete']);
 
-$router->get('/test-session', function () {
-
-    session_unset();
-
-    session_destroy();
-
-    echo 'Session deleted.';
-
-    exit;
-});
