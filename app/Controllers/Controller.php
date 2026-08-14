@@ -8,6 +8,7 @@ class Controller
 {
     protected function view(string $view, array $data = []): void
     {
+        
         extract($data);
 
         require BASE_PATH . '/views/layouts/header.php';
@@ -19,9 +20,8 @@ class Controller
         require BASE_PATH . '/views/layouts/footer.php';
     }
 
-    protected function redirect(string $url): void
+    protected function redirect(string $path): never
     {
-        header("Location: {$url}");
-        exit();
+        redirect($path);
     }
 }
